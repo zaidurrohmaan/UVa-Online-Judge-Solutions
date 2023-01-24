@@ -1,5 +1,3 @@
-// NOT ACCEPTED YET
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,30 +7,28 @@ using namespace std;
 
 int main() 
 {
-    bool flag[11] = {true};
-    int guess;
+    int guess, low = 1, up = 10;
     string response;
     
     while(cin >> guess, guess){
-      cin >> response;
+      
+      cin.ignore();
+      getline(cin, response);
       
       if(response == "too high"){
-        for(int i=guess;i<=10;i++){
-          flag[i] = false;
-        }
+        up = min(up, guess - 1);
       }
       else if(response == "too low"){
-        for(int i=guess;i>=1;i--){
-          flag[i] == false;
-        }
+        low = max(low, guess + 1);
       }
-      else{
-        if(flag[guess] == false) cout << "Stan is dishonest" << endl;
-        else if(flag[guess] == true) cout << "Stan may be honest" << endl;
+      else if(response == "right on"){
+        if(guess <= up && guess >= low) cout << "Stan may be honest";
+        else cout << "Stan is dishonest";
         
-        for(int i=0;i<11;i++){
-          flag[i] = true;
-        }
+        cout << endl;
+        
+        low = 1;
+        up = 10;
       }
     }
 }
