@@ -55,7 +55,7 @@ int main()
       }
       
       for(int i=0;i<numOfPlayers;i++){
-        printf("Position of player %d is %d.", i+1, min(position[i], 100));
+        printf("Position of player %d is %d.", i+1, position[i]);
         cout << endl;
       }
       
