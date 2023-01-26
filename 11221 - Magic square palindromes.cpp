@@ -22,7 +22,7 @@ int main()
       string ss = "";
       
       for(int i=0;i<len;i++){
-        if(((s[i] >= 97 && s[i] <= 122)){
+        if(s[i] >= 97 && s[i] <= 122){
           ss += s[i];
         }
       }
