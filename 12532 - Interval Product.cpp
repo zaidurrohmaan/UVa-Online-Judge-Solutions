@@ -51,7 +51,7 @@ int main() {
 
         while(K--) {
             int a, b;
-            scanf(" %c %d %d", &c, &a, &b); // add space befor %c to ignore whitespace
+            scanf(" %c %d %d", &c, &a, &b); // add space before %c to ignore whitespace
             if (c == 'C') {
                 if (b) b /= abs(b);
                 update(1, 0, N-1, a-1, b);
